@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
 
+  resources :comentarios
+
+  resources :qualificacoes
+
+  resources :clientes
+
   VotaPrato::Application.routes.draw do
+  resources :comentarios
+
+  resources :qualificacoes
+
+  resources :clientes
+
     match 'Ola' => 'ola_mundo#index', via: 'get'
   end
 
