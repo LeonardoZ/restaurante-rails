@@ -1,4 +1,4 @@
-<table>
+<table class="table">
 	<tr>
 		<th>Id</th>
 		<th>Nome</th>
@@ -11,11 +11,14 @@
 		<td><%= r.nome %></td>
 		<td><%= r.endereco %></td>
 		<td><%= r.especialidade %></td>
-		<td><%= link_to 'Mostrar', action: 'show', id: r %></td>
-		<td><%= link_to 'Deletar', {action: 'destroy', id: r},{method: "delete"} %></td>
-		<td><%= link_to 'Editar', action: 'edit', id: r %></td>
+		<td><%= link_to 'Exibir',r, action: 'show',class: 'btn btn-info btn-xs' %></td>
+		<td><%= link_to 'Editar', edit_restaurante_path(r), class: 'btn btn-warning btn-xs' %></td>
+		<td><%= link_to 'Deletar',r, method: :delete, data: { confirm: 'Vocẽ tem certeza?' },class: 'btn btn-danger btn-xs'%></td>
 	</tr>
 	<% end %>
 </table>
+<%= paginate @restaurantes %>
 <br />
-<%= link_to "Novo", action: 'new' %>	
+<%= link_to new_restaurante_path, class: 'btn btn-success btn-lg' do %>	
+	<i class="glypgicon glyphicon-plus"></i>Novo
+<% end %>

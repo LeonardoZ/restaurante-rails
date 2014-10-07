@@ -11,7 +11,17 @@
 
 <%= menu_principal  %w(restaurantes clientes qualificacoes) %>
 
-<%= yield %>
+
+ <div id="main-container" class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-xs-3">
+        <h3>Como bem, coma certo!</h3>
+        </div>
+        <div id="main-content" class="col-xs-9">
+        <%= yield %>
+        </div>
+      </div>
+    </div>
 
 <script type="text/javascript">
 	<%= yield :js %>

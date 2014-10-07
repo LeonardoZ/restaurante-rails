@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root "restaurantes#index"
+
   resources :comentarios
 
   resources :qualificacoes

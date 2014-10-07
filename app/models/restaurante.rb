@@ -14,6 +14,9 @@ class Restaurante < ActiveRecord::Base
 
 	validate :validates_primeira_letra_deve_ser_maiuscula
 
+	has_attached_file :foto, styles: 
+	{ medium: "300x300>", thumb: "100x100>"}
+
 	private
 	def validates_primeira_letra_deve_ser_maiuscula
 		errors.add(:nome,"A primeira letra deve ser maiuscula") unless nome =~ /[A-Z].*/

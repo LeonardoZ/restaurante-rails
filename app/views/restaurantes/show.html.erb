@@ -25,3 +25,7 @@
 
 <%= comentarios @restaurante %>
 <%= novo_comentario @restaurante %>
+<p>
+	<b>Foto:</b>
+	  <%= image_tag @restaurante.foto.url(:thumb) %>
+</p>
